@@ -1,0 +1,648 @@
+/*
+File Name:      style.css
+Student Name:   Ajani Scarlett
+Student ID:     2302995
+Assignment:     2302995_IA#2_AY26-27
+Due Date:       26/10/2026
+*/
+
+
+:root {
+    --bg-dark: #0d0714;
+    --bg-card: #1b1128;
+    --accent-orange: #f4775d;
+    --accent-orange-hover: #e0664c;
+    --accent-purple: #8a2be2;
+    --text-white: #ffffff;
+    --text-grey: #a0a0a0;
+    --border-color: #3b2c4a;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bg-assets {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-grid {
+    position: absolute;
+    inset: 0;
+    background-size: 100px 100px;
+    background-repeat: repeat;
+    opacity: 0.6;
+}
+
+.bg-glow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    opacity: 0.8;
+}
+
+.bg-shape-left {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 500px;
+    height: auto;
+}
+
+.bg-shape-right {
+    position: absolute;
+    top: 5%;
+    right: -20px;
+    width: 300px;
+    height: auto;
+    opacity: 0.7;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+header {
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--text-white);
+    transition: opacity 0.3s ease;
+}
+
+.logo-container:hover {
+    opacity: 0.8;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+nav ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-orange);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 60px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, var(--accent-orange));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-grey);
+    margin-bottom: 15px;
+}
+
+.event-meta {
+    font-size: 1rem ;
+    margin-bottom: 30px;
+}
+
+.event-meta strong {
+    color: var(--text-white);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: var(--text-white);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--accent-orange-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(244, 119, 93, 0.4);
+}
+
+.btn-primary:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-small {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-small:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-danger {
+    background-color: rgba(244, 119, 93, 0.1);
+    border-color: rgba(244, 119, 93, 0.5);
+    color: var(--accent-orange);
+}
+
+.btn-danger:hover {
+    background-color: rgba(244, 119, 93, 0.2);
+    border-color: var(--accent-orange);
+}
+
+.details, .form-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.012);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.details {
+    text-align: left;
+}
+
+.details h2,.details h3 {
+    margin-bottom: 15px;
+    color: var(--accent-orange);
+}
+
+.details p,.details ul,.details ol {
+    color: var(--text-grey);
+    margin-bottom: 20px;
+}
+
+.details ul,.details ol {
+    margin-left: 20px;
+}
+
+.details li {
+    margin-bottom: 8px;
+}
+
+.form-container {
+    max-width: 540px;
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    margin-bottom: 15px;
+    color: var(--text-white);
+}
+
+.form-container > p {
+    color: var(--text-grey);
+    margin-bottom: 40px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input[type="text"],.form-group input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #666;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(244, 119, 93, 0.2);
+}
+
+
+.upload-box {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.02);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.upload-box:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-orange);
+}
+
+.upload-box.drag-active {
+    border-color: var(--accent-orange);
+    background-color: rgba(244, 119, 93, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+}
+
+.upload-box p {
+    color: var(--text-grey);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+#image-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+    z-index: 2;
+}
+
+.hidden-preview {
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.hidden-preview.active {
+    display: block;
+}
+
+#upload-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.hint, .error-msg {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+.hint { color: var(--text-grey); }
+
+.error-msg { color: var(--accent-orange); }
+
+#submitBtn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.ticket-hero {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.ticket-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.ticket-hero .highlight {
+    color: var(--accent-orange);
+}
+
+.ticket-hero p {
+    color: var(--text-grey);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ticket-hero .email-link {
+    color: var(--accent-orange);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-orange);
+}
+
+.ticket-hero .email-link:hover {
+    color: #f8f2f2e0;
+    border-color: #f3f1f1c9;
+}
+
+.ticket-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+.ticket-inner-glass {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    background: none;
+}
+.ticket-card {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    isolation: isolate;
+}
+/* The .ticket-card::before, this is used to put the text on the 
+ticket in front of that baked in tint that came with the pattern-ticket.svg */
+.ticket-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+    linear-gradient(135deg, rgba(111, 94, 120, 0.419), rgba(43, 13, 74, 0.632)),
+    var(--accent-orange);
+    -webkit-mask-image: url('/assets/pattern-ticket.svg') ;
+    mask-image: url('/assets/pattern-ticket.svg') ;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    mask-repeat:no-repeat ;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-mode: alpha;
+    mask-mode: alpha;
+}
+
+.ticket-left {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3; 
+}
+
+.ticket-brand {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 3;
+    
+}
+
+.ticket-date {
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-top: -60px;
+    padding-left: 60px;
+    position: relative;
+    z-index: 3;
+}
+
+.ticket-user {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 15px;
+    position: relative;
+    z-index: 3;
+}
+
+.avatar-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+.github-user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+    z-index: 3;
+}
+
+.github-user:hover {
+    color: var(--accent-orange);
+}
+
+.ticket-right {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px dashed rgba(255, 255, 255, 0.2);
+    padding: 30px 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.ticket-serial {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 3;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--text-grey);
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .bg-shape-left {
+        width: 300px;
+        bottom: -20px;
+        left: -100px;
+    }
+
+    .bg-shape-right {
+        width: 200px;
+        top: 2%;
+    }
+
+    .details,
+    .form-container {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ticket-card {
+        height: 380px;
+        flex-direction: column;
+        -webkit-mask-image: none;
+        mask-image: none;
+        border-radius: 16px;
+        padding: 0; 
+        background-color: transparent; 
+    }
+
+    .ticket-inner-glass {
+        flex-direction: column;
+        border-radius: 14px;
+        border: 2px solid var(--accent-orange);
+        background-color: rgba(25, 15, 40, 0.95); 
+    }
+
+    .ticket-right {
+        width: 100%;
+        height: 80px;
+        border-left: none;
+        border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        padding: 15px;
+    }
+
+    .ticket-serial {
+        writing-mode: horizontal-tb;
+    }
+}

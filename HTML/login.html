@@ -1,0 +1,99 @@
+<!--
+File Name:      login.html
+Student Name:   Ajani Scarlett
+Student ID:     2302995
+Assignment:     2302995_IA#2_AY26-27
+Due Date:       26/10/2026
+-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Conf 2026 - LoginPage</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+      
+        <div class="bg-assets" aria-hidden="true">
+            <div class="bg-grid"></div>
+            <img src="/assets/background-desktop.png" class="bg-glow" alt="">
+            <img src="/assets/pattern-squiggly-line-bottom-desktop.svg" class="bg-shape-left" alt="">
+            <img src="/assets/pattern-squiggly-line-top.svg" class="bg-shape-right" alt="">
+        </div>
+
+        <div class="content-wrapper">
+            <header>
+                <nav>
+                    <a href="index.html" class="logo-container">
+                        <img src="/assets/logo-mark.svg" alt="Coding Conf Logo" width="40">
+                        <span>Coding Conf</span>
+                    </a>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login.html">Register</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <section class="form-container">
+                    <h1>Your Journey to Coding Conf 2026 Starts Here!</h1>
+                    <p>Secure your spot at next year's biggest coding conference.</p>
+
+                    <form id="registrationForm" novalidate>
+                        <div class="form-group">
+                            <label for="avatar">Upload Avatar</label>
+                            <div class="upload-box" id="drop-area">
+                                <img id="image-preview" src="/assets/image-avatar.jpg" alt="Avatar Preview" class="hidden-preview">
+                                <div id="upload-prompt">
+                                    <img src="/assets/icon-upload.svg" alt="Upload Icon" class="upload-icon">
+                                    <p>Drag and drop or click to upload</p>
+                                </div>
+                                    <div id="image-actions" style="display: none;">
+                                        <button type="button" id="btn-change" class="btn-small">Change Image</button>
+                                        <button type="button" id="btn-remove" class="btn-small btn-danger">Remove</button>
+                                    </div>
+                                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" hidden>
+                            </div>
+
+                            <small id="avatarError" class="error-msg"></small>
+                            <small class="hint">Upload your photo (JPG or PNG, max size: 500KB).</small>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Jonatan Kristof">
+                            <small id="nameError" class="error-msg"></small>
+                        </div>
+                   
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com">
+                            <small id="emailError" class="error-msg"></small>
+                        </div>
+                  
+                        <div class="form-group">
+                            <label for="github">GitHub Username</label>
+                            <input type="text" id="github" name="github" placeholder="@yourusername">
+                            <small id="githubError" class="error-msg"></small>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="submitBtn" disabled>Generate My Ticket</button>
+                    </form>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2026 Coding Conf. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/JS/validation.js"></script>
+</body>
+</html>
