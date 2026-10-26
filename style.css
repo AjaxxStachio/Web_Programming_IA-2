@@ -470,8 +470,8 @@ ticket in front of that baked in tint that came with the pattern-ticket.svg */
     background:
     linear-gradient(135deg, rgba(111, 94, 120, 0.419), rgba(43, 13, 74, 0.632)),
     var(--accent-orange);
-    -webkit-mask-image: url('/assets/pattern-ticket.svg') ;
-    mask-image: url('/assets/pattern-ticket.svg') ;
+    -webkit-mask-image: url('pattern-ticket.svg') ;
+    mask-image: url('pattern-ticket.svg') ;
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     mask-repeat:no-repeat ;
